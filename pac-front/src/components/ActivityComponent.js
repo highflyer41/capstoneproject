@@ -16,6 +16,12 @@ class ActivityComponent extends React.Component {
         });
     }
 
+    componentDidUpdate() {
+        ActivityService.getActivities().then((response) => {
+            this.setState({activities: response.data})
+        });
+    }
+
     render() {
         return (
             <div>

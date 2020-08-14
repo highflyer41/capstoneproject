@@ -28,6 +28,10 @@ public class Activity {
         this.description = description;
     }
 
+    public Activity(Activity activity) {
+        this.description = activity.description;
+    }
+
     public Long getId() {
         return id;
     }

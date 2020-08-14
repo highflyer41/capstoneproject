@@ -8,6 +8,11 @@ class ActivityService {
         return axios.get(REST_API_URL);
     }
 
+    addActivity(data) {
+        axios.post(REST_API_URL, data);
+        //console.log(data);
+    }
+
 }
 
 export default new ActivityService()

@@ -18,5 +18,8 @@ public class ActivityService {
         return activityRepo.findAll();
     }
 
-    
+    public void addActivity(Activity activity) {
+        activityRepo.save(new Activity(activity));
+    }
+
 }
