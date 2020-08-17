@@ -7,32 +7,33 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "activities")
-public class Activity {
+@Table(name = "images")
+public class ActivityImage {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    private String url;
     private String name;
 
-    private int duration;
-
-    public Activity() {
+    public ActivityImage() {
     }
 
-    public Activity(String name, int duration) {
+    public ActivityImage(String url, String name) {
+        this.url = url;
         this.name = name;
-        this.duration = duration;
     }
-
-    // public Activity(Activity activity) {
-    //     this.name = activity.name;
-    //     this.duration = activity.duration;
-    // }
 
     public Long getId() {
         return id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getName() {
@@ -43,13 +44,5 @@ public class Activity {
         this.name = name;
     }
 
-    public int getDuration() {
-        return duration;
-    }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    
 }

@@ -19,7 +19,11 @@ public class ActivityService {
     }
 
     public void addActivity(Activity activity) {
-        activityRepo.save(new Activity(activity));
+        activityRepo.save(activity);
+    }
+
+    public void deleteActivity(Long id) {
+        activityRepo.deleteById(id);
     }
 
 }
