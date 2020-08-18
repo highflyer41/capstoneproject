@@ -9,7 +9,7 @@ class AddActivityComponent extends React.Component {
         this.state = {
             name : "",
             duration : 0,
-            img: "class"
+            imgUrl: ""
         }
     }
 
@@ -23,8 +23,11 @@ class AddActivityComponent extends React.Component {
         event.preventDefault();
         const data = {
             name: this.state.name,
-            duration: this.state.duration
+            duration: this.state.duration,
+            imageUrl: this.state.imgUrl
         }
+
+        console.log(data);
 
         ActivityService.addActivity(data);
     }
@@ -32,18 +35,18 @@ class AddActivityComponent extends React.Component {
     selectImage = (event) => {
         event.preventDefault();
         this.setState({
-            img: event.target.value
+            imgUrl: event.target.value
         })
 
         setTimeout(() => {
-            console.log(this.state.img)
+            console.log(this.state.imgUrl)
         }, 200);
     }
 
     render() {
         return (
             <div>
-                <ActivityComponent img={this.state.img} />
+                <ActivityComponent />
 
                 <h1 className="text-center">Add Activity</h1>
                 <form onSubmit={this.submitActivity}>
@@ -59,10 +62,23 @@ class AddActivityComponent extends React.Component {
                         <div className="dropdown show">
                         <label>Select Image list (select one):</label>
                         <select className="form-control" onChange={this.selectImage}>
-                            <option value="brushTeeth">Brush Teeth</option>
-                            <option value="carRide">Ride in Car</option>
-                            <option>3</option>
-                            <option>4</option>
+                            <option value="https://i.ibb.co/C19Wfx7/Brush-Teeth.jpg">Brush Teeth</option>
+                            <option value="https://i.ibb.co/kJd22WZ/Ride-in-Car.jpg">Ride in Car</option>
+                            <option value="https://i.ibb.co/9TjQBdN/Toilet.jpg">Bathroom</option>
+                            <option value="https://i.ibb.co/18dWrGf/Classroom.jpg">Classroom</option>
+                            <option value="https://i.ibb.co/KWb9GQM/School.jpg">School</option>
+                            <option value="https://i.ibb.co/b1Zk9WZ/Science.jpg">Science</option>
+                            <option value="https://i.ibb.co/sm7W4dF/Sit.jpg">Sitting</option>
+                            <option value="https://i.ibb.co/G5chRnD/Sleep.jpg">Sleeping</option>
+                            <option value="https://i.ibb.co/R4z4xxn/Walk.jpg">Walking</option>
+                            <option value="https://i.ibb.co/HXSQBNV/Cooking.jpg">Cooking</option>
+                            <option value="https://i.ibb.co/WcZd466/Drinking.jpg">Drinking</option>
+                            <option value="https://i.ibb.co/2nVrszH/Eat.jpg">Eating</option>
+                            <option value="https://i.ibb.co/h82kXcw/Eat-Lunch.jpg">Eating Lunch</option>
+                            <option value="https://i.ibb.co/pj9BzTS/Geography.jpg">Geography</option>
+                            <option value="https://i.ibb.co/0ZjGbks/History.jpg">History</option>
+                            <option value="https://i.ibb.co/m0wVQnf/Lunch.jpg">Lunch</option>
+                            <option value="https://i.ibb.co/sK3hSTV/Ready-to-Work.jpg">Ready to Work</option>
                         </select>
                         </div>
                     </div>

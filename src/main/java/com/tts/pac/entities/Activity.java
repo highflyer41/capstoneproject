@@ -15,15 +15,17 @@ public class Activity {
     private Long id;
 
     private String name;
+    private String imageUrl;
 
     private int duration;
 
     public Activity() {
     }
 
-    public Activity(String name, int duration) {
+    public Activity(String name, int duration, String imageUrl) {
         this.name = name;
         this.duration = duration;
+        this.imageUrl = imageUrl;
     }
 
     // public Activity(Activity activity) {
@@ -51,5 +53,14 @@ public class Activity {
         this.duration = duration;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    
     
 }
