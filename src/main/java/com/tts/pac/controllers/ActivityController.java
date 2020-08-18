@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = {"http://localhost:3000", "http://www.apirequest.io"})
+@CrossOrigin(origins = {"http://localhost:3000", "https://fast-retreat-22082.herokuapp.com"})
 public class ActivityController {
     
     @Autowired
